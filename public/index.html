@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MDX in HTML</title>
+  <title>MDX on GitHub Pages</title>
   <script type="importmap">
     {
       "imports": {
-        "react": "https://esm.sh/react",
-        "react-dom": "https://esm.sh/react-dom",
-        "@mdx-js/runtime": "https://esm.sh/@mdx-js/runtime"
+        "react": "https://esm.sh/react@18",
+        "react-dom": "https://esm.sh/react-dom@18",
+        "@mdx-js/runtime": "https://esm.sh/@mdx-js/runtime@2"
       }
     }
   </script>
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    #root { max-width: 800px; margin: auto; }
+    body { font-family: sans-serif; padding: 2rem; background: #111; color: #fff; }
+    #root { max-width: 700px; margin: auto; }
   </style>
 </head>
 <body>
-  <h1>MDX Example on GitHub Pages</h1>
+  <h1>Live MDX on GitHub Pages</h1>
   <div id="root">Loading...</div>
 
   <script type="module">
@@ -26,12 +26,12 @@
     import { createRoot } from "react-dom/client";
     import { MDXProvider, MDXRenderer } from "@mdx-js/runtime";
 
-    const mdxContent = await fetch('index.mdx').then(res => res.text());
+    const mdxText = await fetch('./index.mdx').then(res => res.text());
 
     const root = createRoot(document.getElementById("root"));
     root.render(
       <MDXProvider>
-        <MDXRenderer>{mdxContent}</MDXRenderer>
+        <MDXRenderer>{mdxText}</MDXRenderer>
       </MDXProvider>
     );
   </script>
