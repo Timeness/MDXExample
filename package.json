@@ -1,0 +1,13 @@
+{
+  "name": "mdx-gh-pages",
+  "version": "1.0.0",
+  "description": "MDX + HTML site on GitHub Pages",
+  "scripts": {
+    "build": "cp -r public dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
